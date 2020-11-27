@@ -53,8 +53,8 @@
 
     - App.js
     - App.routes.js
-    - render.js
     - index.html
+    - render.js
 
   - .babelrc
   - .eslintrc
@@ -63,5 +63,6 @@
 # 3. Setup Webpack
   - `npm i webpack webpack-cli webpack-dev-server webpack-merge -D`
   - Implement [app-path.config.js]
-  - Implement [webpack.config.js]
-  - 
+  - Implement [webpack.common.js] [webpack.dev.js] [webpack.prod.js]
+
+# 4. Setup Babel
