@@ -7,7 +7,8 @@
     "start": "webpack serve --config config/webpack.dev.js",
     "build": "webpack --config config/webpack.prod.js",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "translate": "extract-messages --locales=en,vi --output \"src/translations\" \"src/**/*.messages.js\""
   },
   "husky": {
     "hooks": {
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/anhthi-ieig/goccuathi-spa#readme",
   "devDependencies": {
+    "@babel/cli": "^7.12.8",
     "@babel/core": "^7.12.9",
     "@babel/preset-env": "^7.12.7",
     "@babel/preset-react": "^7.12.7",
@@ -34,6 +36,7 @@
     "babel-loader": "^8.2.2",
     "babel-plugin-import": "^1.13.3",
     "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-react-intl-auto": "^3.3.0",
     "babel-plugin-transform-imports": "^2.0.0",
     "clean-webpack-plugin": "^3.0.0",
     "compression-webpack-plugin": "^6.1.1",
@@ -48,6 +51,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "extract-react-intl-messages": "^4.1.1",
     "html-webpack-plugin": "^4.5.0",
     "husky": "^4.3.0",
     "less": "^3.12.2",
@@ -72,6 +76,7 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-intl": "^5.10.6",
     "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
     "react-svg-loader": "^3.0.3",

@@ -111,7 +111,7 @@
   [Reference]
   - `babel-plugin-import`: load Ant Design
 
-# 10. Install utils libraries
+# 10. Install Utils Libraries
   - `npm i axios classnames lodash moment prop-types react-svg-loader`
   - `npm i copy-webpack-plugin dotenv-webpack -D`
   - Add `copy-webpack-plugin` to [webpack.prod.js] plugins
@@ -135,3 +135,14 @@
   - `moment-locales-webpack-plugin`: removes unused Moment.js locales
   - `babel-plugin-transform-imports`: transform lodash functions import style to default
   - `css-minimizer-webpack-plugin`: minify css 
+  
+# 13. Translate Messages
+  - `npm i react-intl`
+  - `npm i extract-react-intl-messages -D`
+  - Add a component messages file
+  - Add `babel-plugin-react-intl-auto` to [.babelrc] plugins
+  - Add `extract-msg` command to [package.json]
+
+# 14. Code Splitting
+
+# 14. Setup Jest and Enzyme
