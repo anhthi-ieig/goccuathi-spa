@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const appPath = require('./app-path.config');
 
@@ -17,6 +18,8 @@ const miniCssExtract = new MiniCssExtractPlugin({
   filename: '[name].[hash:8].css',
   ignoreOrder: true,
 });
+
+const dotEnv = new Dotenv();
 
 //
 // ──────────────────────────────────────────────────────────────── I ──────────
@@ -141,5 +144,6 @@ module.exports = {
   plugins: [
     buildIndexHtml,
     miniCssExtract,
+    dotEnv,
   ],
 };

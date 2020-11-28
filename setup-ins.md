@@ -57,6 +57,7 @@
 
   - .babelrc
   - .eslintrc
+  - .env
   - jsconfig.json
 
 # 3. Setup Webpack
@@ -107,8 +108,15 @@
   - Add `import` to [.babelrc] plugins for loading Ant Design
   - Add rules to load Ant Design less in [webpack.common.js]
 
-# 10. Install utility library
+# 10. Install utils libraries
   - `npm i axios classnames lodash moment prop-types react-svg-loader`
+  - `npm i clean-webpack-plugin copy-webpack-plugin dotenv-webpack -D`
+  - Add `clean-webpack-plugin` and `copy-webpack-plugin` to [webpack.prod.js] plugins
+  - Add `dotenv-webpack` to [webpack.common.js] plugins
 
-# 11. Optimize
-  - `npm i compression-webpack-plugin clean-webpack-plugin copy-webpack-plugin dotenv-webpack moment-locales-webpack-plugin babel-plugin-transform-imports husky -D`
+# 11. Pre-commit
+  - `npm i husky -D`
+  - Add `husky` to [package.json]
+
+# 12. Optimize
+  - `npm i compression-webpack-plugin moment-locales-webpack-plugin babel-plugin-transform-imports -D`
