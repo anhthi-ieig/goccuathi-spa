@@ -1,3 +1,4 @@
 {
-  "signIn-hello": "Hello, {name}"
+  "signIn-goodBye": "Bye, {name}",
+  "signIn-hello": "Hello, World"
 }

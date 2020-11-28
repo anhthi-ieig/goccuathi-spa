@@ -1,10 +1,15 @@
 import { defineMessages } from 'react-intl';
 
 const contextPath = 'signIn';
-
-export default defineMessages({
+const localMsg = defineMessages({
   hello: {
     id: `${contextPath}-hello`,
-    defaultMessage: 'Hello, {name}',
+    defaultMessage: 'Hello, World',
+  },
+  goodBye: {
+    id: `${contextPath}-goodBye`,
+    defaultMessage: 'Bye, {name}',
   },
 });
+
+export default localMsg;

@@ -9,10 +9,11 @@ const webpackCommon = require('./webpack.common');
 // ────────────────────────────────────────────────────────────────
 //
 
-const isLaunchMonitor = true;
-const bundleAnalyzerPlugin = isLaunchMonitor
-  ? new BundleAnalyzerPlugin()
-  : undefined;
+const isLaunchAnalyzer = false;
+const bundleAnalyzerPlugin = new BundleAnalyzerPlugin();
+const plugins = isLaunchAnalyzer ? [
+  bundleAnalyzerPlugin,
+] : undefined;
 
 //
 // ──────────────────────────────────────────────────── I ──────────
@@ -23,9 +24,7 @@ const bundleAnalyzerPlugin = isLaunchMonitor
 module.exports = merge(webpackCommon, {
   devtool: 'inline-source-map',
   mode: 'development',
-  plugins: [
-    bundleAnalyzerPlugin,
-  ],
+  plugins,
   devServer: {
     port: 3000,
     open: true,

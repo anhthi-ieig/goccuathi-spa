@@ -1,14 +1,17 @@
-import React, { memo } from 'react';
-import moment from 'moment';
-import { camelCase } from 'lodash';
-import { Button } from 'antd/lib/button';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Button } from 'antd';
 import { StarFilled } from '@ant-design/icons';
 
+import withIntlMessages from 'HOCs/withIntlMessages';
+
+import pureMessages from './SignIn.messages';
 import styles from './SignIn.less';
 
-const SignIn = () => {
-  console.log(moment().toISOString());
-  console.log(camelCase('hello world'));
+const SignIn = (props) => {
+  const { messages } = props;
+
+  console.log(messages.hello);
 
   return (
     <div className={styles.contentText}>
@@ -20,4 +23,8 @@ const SignIn = () => {
   );
 };
 
-export default memo(SignIn);
+SignIn.propTypes = {
+  messages: PropTypes.object.isRequired,
+};
+
+export default withIntlMessages(pureMessages)(SignIn);
