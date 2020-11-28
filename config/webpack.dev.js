@@ -1,4 +1,4 @@
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 
 const webpackCommon = require('./webpack.common');
 
@@ -8,9 +8,6 @@ module.exports = merge(webpackCommon, {
   devServer: {
     port: 3000,
     open: true,
-    hot: true,
-    historyApiFallback: {
-      disableDotRule: true,
-    },
+    historyApiFallback: true,
   },
 });

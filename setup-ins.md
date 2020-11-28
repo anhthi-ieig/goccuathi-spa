@@ -66,3 +66,36 @@
   - Implement [webpack.common.js] [webpack.dev.js] [webpack.prod.js]
 
 # 4. Setup Babel
+  - `npm i @babel/core @babel/preset-env @babel/preset-react babel-loader -D`
+  - Implement [.babelrc]
+  - Add `babel-loader` to [webpack.common.js]
+
+  [Reference]
+  - `@babel/preset-env`: transform ES6 to ES5 which capable in target environments
+  - `@babel/preset-react`: preset for all React plugins
+
+# 5. Setup ESLint
+  - `npm i eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y eslint-loader babel-eslint -D`
+  - Implement [.eslintrc]
+  - Add `lint` and `lint:fix` commands to [package.json]
+
+  [Reference]
+  - `eslint-config-airbnb`: requires `eslint`, `eslint-plugin-import`, `eslint-plugin-react`, `eslint-plugin-react-hooks`, and `eslint-plugin-jsx-a11y`
+
+# 6. Path Resolver
+  - `npm i babel-plugin-module-resolver -D`
+  - Implement [jsconfig.json]
+  - Add `module-resolver` to [.babelrc] plugins
+  - Add `import/resolver` to [.eslintrc] settings
+
+# 7. Setup React and inject index.html
+  - `npm i react react-dom redux redux-saga react-redux react-router-dom`
+  - `npm i html-webpack-plugin -D`
+  - Add `html-webpack-plugin` to [webpack.common.js] plugins
+  - Implement [index.html]
+  - Implement [App.js]
+  - Implement [render.js]
+  - Add `start` and `build` commands to [package.json]
+
+# 8. Extract Css
+  - `npm i mini-css-extract-plugin css-loader postcss-loader less-loader style-resources-loader -D`

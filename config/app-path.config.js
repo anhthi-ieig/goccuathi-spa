@@ -8,13 +8,13 @@ module.exports = {
    * Render
    */
 
-  render: path.join(rootDir, 'render.js'),
+  render: path.join(rootDir, 'src/render.js'),
 
   /**
    * Index HTML
    */
 
-  indexHtml: path.join(rootDir, 'index.html'),
+  indexHtml: path.join(rootDir, 'src/index.html'),
 
   /**
    * Style Resources
@@ -26,7 +26,7 @@ module.exports = {
    * PostCss
    */
 
-  postCss: path.join(rootDirectory, 'config/postcss.config.js'),
+  postCss: path.join(rootDir, 'config/postcss.config.js'),
 
   /**
    * Public Dir
