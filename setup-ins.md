@@ -96,7 +96,19 @@
   - Implement [render.js]
   - Add `start` and `build` commands to [package.json]
 
-# 8. Setup Css
+# 8. Compile Less to Css
   - `npm i less less-loader mini-css-extract-plugin css-loader postcss-loader style-resources-loader autoprefixer -D`
-  - Add rules for `.css` and `.less` in [webpack.common.js]
+  - Add module rules for `.css` and `.less` in [webpack.common.js]
   - Create a react component, add variable to [resources.less] and component LESS file to test
+
+# 9. Setup Ant Design
+  - `npm i antd @ant-design/icons`
+  - `npm i babel-plugin-import -D`
+  - Add `import` to [.babelrc] plugins for loading Ant Design
+  - Add rules to load Ant Design less in [webpack.common.js]
+
+# 10. Install utility library
+  - `npm i axios classnames lodash moment prop-types react-svg-loader`
+
+# 11. Optimize
+  - `npm i compression-webpack-plugin clean-webpack-plugin copy-webpack-plugin dotenv-webpack moment-locales-webpack-plugin babel-plugin-transform-imports husky -D`
