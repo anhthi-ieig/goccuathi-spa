@@ -108,15 +108,30 @@
   - Add `import` to [.babelrc] plugins for loading Ant Design
   - Add rules to load Ant Design less in [webpack.common.js]
 
+  [Reference]
+  - `babel-plugin-import`: load Ant Design
+
 # 10. Install utils libraries
   - `npm i axios classnames lodash moment prop-types react-svg-loader`
-  - `npm i clean-webpack-plugin copy-webpack-plugin dotenv-webpack -D`
-  - Add `clean-webpack-plugin` and `copy-webpack-plugin` to [webpack.prod.js] plugins
+  - `npm i copy-webpack-plugin dotenv-webpack -D`
+  - Add `copy-webpack-plugin` to [webpack.prod.js] plugins
   - Add `dotenv-webpack` to [webpack.common.js] plugins
+  - Add `react-svg-loader` for process `.svg` files to [webpack.common.js] module rules
 
 # 11. Pre-commit
   - `npm i husky -D`
   - Add `husky` to [package.json]
 
-# 12. Optimize
-  - `npm i compression-webpack-plugin moment-locales-webpack-plugin babel-plugin-transform-imports -D`
+# 12. Optimize Bundle Size
+  - `npm i webpack-bundle-analyzer -D`
+  - `npm i compression-webpack-plugin moment-locales-webpack-plugin babel-plugin-transform-imports css-minimizer-webpack-plugin clean-webpack-plugin -D`
+  - Add `moment-locales-webpack-plugin` to [webpack.common.js] plugins
+  - Add `webpack-bundle-analyzer` to [webpack.dev.js] plugins
+  - Add `compression-webpack-plugin`, `css-minimizer-webpack-plugin` and `clean-webpack-plugin` to [webpack.prod.js] plugins
+  - Add `babel-plugin-transform-imports` to [.babelrc] plugins
+
+  [Reference]
+  - `compression-webpack-plugin`: enables Brotli compression
+  - `moment-locales-webpack-plugin`: removes unused Moment.js locales
+  - `babel-plugin-transform-imports`: transform lodash functions import style to default
+  - `css-minimizer-webpack-plugin`: minify css 
