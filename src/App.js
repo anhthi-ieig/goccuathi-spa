@@ -1,15 +1,11 @@
 import React, { memo } from 'react';
 
-import { hello } from 'global/constants';
+import SignIn from './pages/SignIn';
 
-const App = () => {
-  hello();
-
-  return (
-    <div>
-      Hello World
-    </div>
-  );
-};
+const App = () => (
+  <div>
+    <SignIn />
+  </div>
+);
 
 export default memo(App);

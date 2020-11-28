@@ -2,7 +2,6 @@
 # 2. Create project structure
   - config
     - app-path.config.js
-    - postcss.config.js
     - webpack.common.js
     - webpack.dev.js
     - webpack.prod.js
@@ -97,5 +96,7 @@
   - Implement [render.js]
   - Add `start` and `build` commands to [package.json]
 
-# 8. Extract Css
-  - `npm i mini-css-extract-plugin css-loader postcss-loader less-loader style-resources-loader -D`
+# 8. Setup Css
+  - `npm i less less-loader mini-css-extract-plugin css-loader postcss-loader style-resources-loader autoprefixer -D`
+  - Add rules for `.css` and `.less` in [webpack.common.js]
+  - Create a react component, add variable to [resources.less] and component LESS file to test
