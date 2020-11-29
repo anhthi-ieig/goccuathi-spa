@@ -21,7 +21,6 @@ const miniCssExtract = new MiniCssExtractPlugin({
 });
 
 const momentLocalesPlugins = new MomentLocalesPlugin();
-
 const dotEnv = new Dotenv();
 
 //
@@ -150,4 +149,20 @@ module.exports = {
     momentLocalesPlugins,
     dotEnv,
   ],
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        react: {
+          name: 'react',
+          test: /[\\/]node_modules[\\/]((react|react-dom).*)[\\/]/,
+          chunks: 'all',
+        },
+        antd: {
+          name: 'antd',
+          test: /[\\/]node_modules[\\/]((antd|@ant-design).*)[\\/]/,
+          chunks: 'all',
+        },
+      },
+    },
+  },
 };

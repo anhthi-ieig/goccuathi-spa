@@ -123,11 +123,10 @@
   - Add `husky` to [package.json]
 
 # 12. Optimize Bundle Size
-  - `npm i webpack-bundle-analyzer -D`
-  - `npm i compression-webpack-plugin moment-locales-webpack-plugin babel-plugin-transform-imports css-minimizer-webpack-plugin clean-webpack-plugin -D`
+  - `npm i bundle-stats-webpack-plugin -D`
+  - `npm i compression-webpack-plugin moment-locales-webpack-plugin babel-plugin-transform-imports terser-webpack-plugin css-minimizer-webpack-plugin clean-webpack-plugin -D`
   - Add `moment-locales-webpack-plugin` to [webpack.common.js] plugins
-  - Add `webpack-bundle-analyzer` to [webpack.dev.js] plugins
-  - Add `compression-webpack-plugin`, `css-minimizer-webpack-plugin` and `clean-webpack-plugin` to [webpack.prod.js] plugins
+  - Add `bundle-stats-webpack-plugin`, `compression-webpack-plugin`, `terser-webpack-plugin`, `css-minimizer-webpack-plugin` and `clean-webpack-plugin` to [webpack.prod.js] plugins
   - Add `babel-plugin-transform-imports` to [.babelrc] plugins
 
   [Reference]
@@ -138,11 +137,12 @@
   
 # 13. Translate Messages
   - `npm i react-intl`
-  - `npm i extract-react-intl-messages -D`
-  - Add a component messages file
+  - `npm i extract-react-intl-messages babel-plugin-react-intl-auto -D`
   - Add `babel-plugin-react-intl-auto` to [.babelrc] plugins
-  - Add `extract-msg` command to [package.json]
-
-# 14. Code Splitting
+  - Add `translate` command to [package.json]
+  - Setup IntlProvider in [render.js]
+  - Implement a component messages for testing
 
 # 14. Setup Jest and Enzyme
+
+# 15. Progressive Web App

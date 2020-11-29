@@ -1,8 +1,10 @@
 const CopyPlugin = require('copy-webpack-plugin');
 const CompressionWebpackPlugin = require('compression-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const { merge } = require('webpack-merge');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { BundleStatsWebpackPlugin } = require('bundle-stats-webpack-plugin');
+const { merge } = require('webpack-merge');
 
 const webpackCommon = require('./webpack.common');
 
@@ -27,8 +29,13 @@ const compressionPlugin = new CompressionWebpackPlugin({
   algorithm: 'brotliCompress',
 });
 
+const terserPlugin = new TerserPlugin({
+  extractComments: false,
+});
+
 const cssMinimizerPlugin = new CssMinimizerPlugin();
 const cleanPlugin = new CleanWebpackPlugin();
+const bundleStatsPlugin = new BundleStatsWebpackPlugin();
 
 //
 // ──────────────────────────────────────────────────── I ──────────
@@ -42,10 +49,12 @@ module.exports = merge(webpackCommon, {
     copyPlugin,
     compressionPlugin,
     cleanPlugin,
+    bundleStatsPlugin,
   ],
   optimization: {
-    minimize: true,
+    minimize: false,
     minimizer: [
+      terserPlugin,
       cssMinimizerPlugin,
     ],
   },

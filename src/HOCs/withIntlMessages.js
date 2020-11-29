@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { injectIntl } from 'react-intl';
+import { useIntl } from 'react-intl';
 import { last } from 'lodash';
 
 const getMessageIds = (pureMessages) => {
@@ -19,8 +18,7 @@ const generateMessages = (intl, messageIds) => messageIds.reduce((acc, messageId
 
 const withIntlMessages = (pureMessages) => (WrappedComponent) => {
   const IntlComponent = (props) => {
-    const { intl } = props;
-
+    const intl = useIntl();
     const messageIds = getMessageIds(pureMessages);
     const generatedMessages = generateMessages(intl, messageIds);
 
@@ -32,11 +30,7 @@ const withIntlMessages = (pureMessages) => (WrappedComponent) => {
     );
   };
 
-  IntlComponent.propTypes = {
-    intl: PropTypes.object.isRequired,
-  };
-
-  return injectIntl(IntlComponent);
+  return IntlComponent;
 };
 
 export default withIntlMessages;
