@@ -1,26 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { IntlProvider } from 'react-intl';
+import { Provider as ReactReduxProvider } from 'react-redux';
+import { createBrowserHistory } from 'history';
 
-import enLang from 'translations/en.json';
-import viLang from 'translations/vi.json';
-
-import { LANGUAGE } from 'global/constants';
+import createStore from 'core/create-store';
 
 import App from './App';
 
-const languages = Object.freeze({
-  [LANGUAGE.EN]: enLang,
-  [LANGUAGE.VI]: viLang,
-});
+const history = createBrowserHistory();
+const store = createStore(history);
 
 ReactDOM.render(
-  <IntlProvider
-    key={LANGUAGE.EN}
-    locale={LANGUAGE.EN}
-    messages={languages[LANGUAGE.EN]}
-  >
-    <App />
-  </IntlProvider>,
+  <ReactReduxProvider store={store}>
+    <App history={history} />
+  </ReactReduxProvider>,
   document.getElementById('root'),
 );

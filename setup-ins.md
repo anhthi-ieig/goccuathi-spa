@@ -89,7 +89,7 @@
   - Add `import/resolver` to [.eslintrc] settings
 
 # 7. Setup React and inject index.html
-  - `npm i react react-dom redux redux-saga react-redux react-router-dom`
+  - `npm i react react-dom redux redux-saga react-redux react-router-dom connected-react-router`
   - `npm i html-webpack-plugin -D`
   - Add `html-webpack-plugin` to [webpack.common.js] plugins
   - Implement [index.html]
