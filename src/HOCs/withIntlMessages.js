@@ -3,12 +3,12 @@ import { useIntl } from 'react-intl';
 import { last } from 'lodash';
 
 const getMessageIds = (pureMessages) => {
-  const messageIds = Object.keys(pureMessages);
-  return messageIds.map((key) => pureMessages[key].id);
+  const messages = Object.values(pureMessages);
+  return messages.map((message) => message.id);
 };
 
 const generateMessages = (intl, messageIds) => messageIds.reduce((acc, messageId) => {
-  const shortId = last(messageId.split('-'));
+  const shortId = last(messageId.split('_'));
   acc[shortId] = intl.formatMessage({
     id: messageId,
   });

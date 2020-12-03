@@ -4,7 +4,12 @@
     "@babel/preset-react"
   ],
   "plugins": [
-    "react-intl-auto",
+    [
+      "react-intl-auto",
+      {
+        "separator": "_"
+      }
+    ],
     [
       "module-resolver",
       {

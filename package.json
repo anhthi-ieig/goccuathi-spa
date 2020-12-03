@@ -8,7 +8,7 @@
     "build": "webpack --config config/webpack.prod.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "translate": "extract-messages --locales=en,vi --output \"src/translations\" \"src/**/*.messages.js\""
+    "translate": "extract-messages --locales=en,vi --output \"src/languages\" \"src/**/*.messages.js\""
   },
   "husky": {
     "hooks": {

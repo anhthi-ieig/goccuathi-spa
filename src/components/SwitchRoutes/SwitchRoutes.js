@@ -3,13 +3,11 @@ import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
 import { snakeCase } from 'lodash';
 
-import Loading from 'components/Loading';
-
 const SwitchRoutes = (props) => {
   const { routes } = props;
 
   return (
-    <Suspense fallback={<Loading />}>
+    <Suspense fallback="loading...">
       <Switch>
         {routes.map((route) => (
           <Route

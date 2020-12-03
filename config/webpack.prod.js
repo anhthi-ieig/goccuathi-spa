@@ -1,9 +1,9 @@
 const CopyPlugin = require('copy-webpack-plugin');
-const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CompressionWebpackPlugin = require('compression-webpack-plugin');
 const { BundleStatsWebpackPlugin } = require('bundle-stats-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { merge } = require('webpack-merge');
 
 const webpackCommon = require('./webpack.common');
@@ -33,8 +33,8 @@ const terserPlugin = new TerserPlugin({
   extractComments: false,
 });
 
-const cssMinimizerPlugin = new CssMinimizerPlugin();
 const cleanPlugin = new CleanWebpackPlugin();
+const cssMinimizerPlugin = new CssMinimizerPlugin();
 const bundleStatsPlugin = new BundleStatsWebpackPlugin();
 
 //

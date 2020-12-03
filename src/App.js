@@ -4,8 +4,8 @@ import { IntlProvider } from 'react-intl';
 import { ConnectedRouter } from 'connected-react-router';
 
 import SwitchRoutes from 'components/SwitchRoutes';
-import enLang from 'translations/en.json';
-import viLang from 'translations/vi.json';
+import enLang from 'languages/en.json';
+import viLang from 'languages/vi.json';
 import { LANGUAGE } from 'global/constants';
 
 import rootRoutes from './App.routes';

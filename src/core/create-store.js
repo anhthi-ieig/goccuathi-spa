@@ -2,7 +2,7 @@ import createSagaMiddleware from 'redux-saga';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'connected-react-router';
 
-import rootEffects from './root-effects';
+// import rootEffects from './root-effects';
 import rootReducers from './root-reducers';
 
 /**
@@ -28,6 +28,6 @@ export default (history) => {
     ),
   );
 
-  sagaMiddleware.run(rootEffects);
+  // sagaMiddleware.run(rootEffects);
   return store;
 };
